@@ -1,1 +1,16 @@
 Write your query here:
+
+Lets assume schema like this
+
+CREATE TABLE dbo.RESTAURANT
+(
+    name varchar(100),
+    phone_number BIGINT,
+    address varchar(300),
+    rating float,
+    PRIMARY KEY(name, phone_number)
+)
+
+Query to find top 5 high rating RESTAURANT:
+
+SELECT name, rating FROM dbo.RESTAURANT ORDER BY rating desc LIMIT 5
