@@ -10,7 +10,6 @@ def on_connect(client, userdata, flags, rc):
   client.subscribe("/restaurant")
 
 def on_message(client, userdata, msg):
-    print(msg.payload.decode())
     order_json = json.loads(msg.payload.decode().replace("'", '"'))
     print('Order ID - ', order_json['order#'])
     for key, value in order_json['orders'].items():
