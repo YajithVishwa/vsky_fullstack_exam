@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package restaurant;
+
+service RestaurantService {
+  rpc GetRestaurantDetails (RestaurantIdRequest) returns (RestaurantDetails);
+}
+
+message RestaurantIdRequest {
+  int32 restaurant_id = 1;
+}
+
+message RestaurantDetails {
+  int32 restaurant_id = 1;
+  string name = 2;
+  string address = 3;
+  float rating = 4;
+}
